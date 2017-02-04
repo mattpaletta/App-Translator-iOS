@@ -27,6 +27,7 @@ Add any localizations you want to use in the "Localizations" section of the proj
 - Make sure to check off "Use Base Internalization"
 
 Export localizations from Xcode through the menu bar.
+
 ![Export Localization](https://raw.github.com/mattpaletta/App-Translator-iOS/master/export_localization.png)
 
 Run App-Translator
@@ -35,6 +36,7 @@ python localizeFile.py {FOLDER NAME}
 ```
 
 Back in Xcode, import the same localization files through the menu bar.  App-Translator will save the translated files back into the original files.
+
 ![Import Localization](https://raw.github.com/mattpaletta/App-Translator-iOS/master/import_localization.png)
 
 
@@ -42,22 +44,22 @@ Back in Xcode, import the same localization files through the menu bar.  App-Tra
 
 Source Language         | 
 ------------------------|
-'English'               |
+English               |
 
 Translated Language     | 
 ------------------------|
-'Chinese (Traditional)' |
-'Chinese (Simplified)'  |
-'English'               |
-'French'                |
-'German'                |
-'Italian'               |
-'Japanese'              |
-'Korean'                |
-'Portugese (Brazil'     |
-'Portugese (Portugal)'  |
-'Russian'               |
-'Spanish'               |
+Chinese (Traditional)   |
+Chinese (Simplified)    |
+English                 |
+French                  |
+German                  |
+Italian                 |
+Japanese                |
+Korean                  |
+Portugese (Brazil)      |
+Portugese (Portugal)    |
+Russian                 |
+Spanish                 |
 
 
 ## Information
