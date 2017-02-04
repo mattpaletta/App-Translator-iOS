@@ -1,6 +1,32 @@
 # -*- coding: utf-8 -*-
+import os
+import urlparse
+import urllib
+import urllib2
+import httplib2
+import gzip
+import json
+from httplib2 import FileCache
+from urllib2 import HTTPRedirectHandler, HTTPDefaultErrorHandler, HTTPError
+
+### Hard-coded variables ###
+
+api = 'YOUR GOOGLE API KEY HERE'
+
+languages = ["af", "sq", "ar","be", "bg", "ca", "zh-CN", "zh-TW", "hr",
+             "cs", "da", "nl", "en", "et", "tl", "fi", "fr", "gl", "de",
+             "el", "iw", "hi", "hu", "is", "id", "ga", "it", "ja", "ko",
+             "lv", "lt", "mk", "ms", "mt", "no", "fa", "pl", "pt", "ro",
+             "ru", "sr", "sk", "sl", "es", "sw", "sv", "th", "tr", "uk",
+             "vi", "cy", "yi"]
+
+def _validate_language(lang):
+    if lang in languages:
+        return True
+    return False
+
 """
-You need to fill in your API key from google below. Note that querying
+You need to fill in your API key from google above. Note that querying
 supported languages is not implemented.
 
 Language Code
@@ -58,31 +84,6 @@ Vietnamese 	vi
 Welsh 	cy
 Yiddish 	yi
 """
-import os
-import urlparse
-import urllib
-import urllib2
-import httplib2
-import gzip
-import json
-from httplib2 import FileCache
-from urllib2 import HTTPRedirectHandler, HTTPDefaultErrorHandler, HTTPError
-
-### Hard-coded variables ###
-
-api = 'AIzaSyDUqzzJ1bvJwCHT6upKP_JZpQxmBpssyoU'
-
-languages = ["af", "sq", "ar","be", "bg", "ca", "zh-CN", "zh-TW", "hr",
-             "cs", "da", "nl", "en", "et", "tl", "fi", "fr", "gl", "de",
-             "el", "iw", "hi", "hu", "is", "id", "ga", "it", "ja", "ko",
-             "lv", "lt", "mk", "ms", "mt", "no", "fa", "pl", "pt", "ro",
-             "ru", "sr", "sk", "sl", "es", "sw", "sv", "th", "tr", "uk",
-             "vi", "cy", "yi"]
-
-def _validate_language(lang):
-    if lang in languages:
-        return True
-    return False
 
 ### Custom G-Zipped Cache ###
 
