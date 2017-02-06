@@ -9,7 +9,7 @@ Translating iOS Apps has never been easier (or cheaper)
 
 ## Installation
 
-Open ![Google Cloud Console](https://console.cloud.google.com), and create a new API key for Google Cloud Translation API.  You will also need to setup billing for your account.
+Open [Google Cloud Console](https://console.cloud.google.com), and create a new API key for Google Cloud Translation API.  You will also need to setup billing for your account.
 
 Copy your API key from Google Cloud Console into translate.py
 
