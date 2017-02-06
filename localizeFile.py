@@ -12,6 +12,12 @@ sys.setdefaultencoding('utf-8')
 translator = GoogleTranslator()
 count = 0
 
+
+# xcodebuild -importLocalizations -localizationPath <dirpath> -project <projectname> [-forceImport]
+
+# xcodebuild -exportLocalizations -localizationPath <dirpath> -project <projectname> [[-exportLanguage <targetlanguage>]]
+
+
 def translateText(text, target="en"):
     global count
     count += len(text)
