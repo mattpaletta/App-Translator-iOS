@@ -81,7 +81,8 @@ def translateFile(filename, path):
                                 translatedEncoded = raw.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                body.append(new)
+                                if source.text != new.text:
+                                    body.append(new)
                             else:
                                 # Never found it Add it in
                                 new = ET.Element('{urn:oasis:names:tc:xliff:document:1.2}target')
@@ -89,7 +90,8 @@ def translateFile(filename, path):
                                 translatedEncoded = translated.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                body.append(new)
+                                if source.text != new.text:
+                                    body.append(new)
                         # Update it from Google or from Human Dictionary
                         else:
                             if attrib["id"] == 'CFBundleName' or attrib["id"] == 'CFBundleShortVersionString':
@@ -99,7 +101,8 @@ def translateFile(filename, path):
                                 translatedEncoded = raw.encode('UTF-8')
                                 target.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                body.append(new)
+                                if source.text != new.text:
+                                    body.append(new)
                             else:
                                 translated = translateText(source.text, targetLang)
                                 translatedEncoded = translated.encode('UTF-8')
@@ -120,10 +123,17 @@ def translateFile(filename, path):
     f.write(newdata.encode('utf-8'))
     f.close()
     print "#"
-path = 'ShopEasy/'
 
-for filename in os.listdir(path):
-    # do your stuff
-    translateFile(filename, path)
 
-print str(count)+" letter"
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Correct Usage: 'python localizeFile.py {FOLDER_TO_TRANSLATE}'")
+    elif sys.argv[1] == "--rm-cache":
+        if os.path.exists("cache.json"): #file exist
+            os.remove("cache.json")
+    else:
+        path = sys.argv[1]+'/'
+
+        for filename in os.listdir(path):
+            translateFile(filename, path)
+            print str(count)+" letters"
