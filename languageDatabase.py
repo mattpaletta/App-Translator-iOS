@@ -1,6 +1,7 @@
-import xml.etree.ElementTree as ET
+import json
 import os
-import html.parser as htmlparser
+from translate import GoogleTranslator
+
 
 # store past translations in an XML file, and a separate lookup for human entries
 
@@ -9,44 +10,69 @@ import html.parser as htmlparser
     <translation lang=""> text
 '''
 
+def writeJSON(fileName, data):
+    with open(fileName, 'w') as outfile:
+        json.dump(data, outfile)
+
+def readJSON(fileName):
+    with open(fileName) as data_file:
+        return json.load(data_file)
+
 
 class langDatabase():
-    preferredTree = ""
-    lookupTree = ""
+    preferredTree = {}
+    lookupTree = {}
     
     def __init__(self):
         #Load the files
-        lookup_path = "lookup.xml"
-        preferred_path = "preferred.xml"
+        lookup_path = "cache.json"
+        preferred_path = "preferred.json"
         if os.path.exists(lookup_path): #file exist
-            lookupTree = ET.parse(lookup_path)
+            self.lookupTree = readJSON(lookup_path)
         
+        if os.path.exists(preferred_path):
+            self.preferred_path = readJSON(preferred_path)
+
+        # File will be automatically created otherwise
         
-        else: #create a new file
-            
-            root = ET.Element("root")
-            doc = ET.SubElement(root, "doc")
+        assert(os.path.exists("config.json"))
+        json = readJSON("config.json")
+        assert("api" in json)
+        assert("google_translate" in json["api"])
+        api = json["api"]["google_translate"]
+        assert(api != "YOUR_API_KEY_HERE")
+        
+        self.translator = GoogleTranslator(api)
 
-            ET.SubElement(doc, "field1", name="blah").text = "some value1"
-            ET.SubElement(doc, "field2", name="asdfasd").text = "some vlaue2"
-
-            lookupTree = ET.ElementTree(root)
-            lookupTree.write(lookup_path)
-
-    def add(source, translated, lang):
-        #check if source is already in the tree
-            #if it is, replace it
-            #if not, add it
+    def add(self, original, translated, target, source):
+        if source not in tree:
+            tree[source] = {}
+        
+        if target not in tree[source]:
+            tree[source][target] = {}
+        
+        if original not in tree[source][target]:
+            tree[source][target][original] = translated
     
-    def translate(source, target, source="en"):
+    def translate(self, original, target, source="en"):
         #check if source is already in the preferred tree
-            #if it is, return that
-            #if it isn't, check if it's in the lookup list
-                #if it is, return that
-                #last resort, use google translate, store result
-                    #check if it's a valid language, otherwise return original
+        
+        for tree in [self.preferredTree, self.lookupTree]:
+            if source in tree:
+                if target in tree[source]:
+                    if original in tree[source][target]:
+                        return tree[source][target][original]
+
+        # Must not be cached
+        trans = self.translator.translate(original, source, target) # always translating from english
+        add(original, trans, target, source)
+    
+        return trans
+
 
     def __del__(self):
         # save the tree, if it changed
-        lookupTree.write(lookup_path)
-        preferredTree.write(preferred_path)
+        lookup_path = "cache.json"
+        preferred_path = "preferred.json"
+        writeJSON(lookup_path, self.lookupTree)
+        writeJSON(preferred_path, self.preferredTree)

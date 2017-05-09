@@ -1,15 +1,15 @@
 #from apiclient.discovery import build
-from translate import GoogleTranslator
 import xml.etree.ElementTree as ET
 import json
 import sys
 import os
-import html.parser as htmlparser
+import HTMLParser
+from languageDatabase import langDatabase
 stdin, stdout = sys.stdin, sys.stdout
 reload(sys)
 sys.stdin, sys.stdout = stdin, stdout
 sys.setdefaultencoding('utf-8')
-translator = GoogleTranslator()
+translator = langDatabase()
 count = 0
 
 
@@ -18,20 +18,18 @@ count = 0
 # xcodebuild -exportLocalizations -localizationPath <dirpath> -project <projectname> [[-exportLanguage <targetlanguage>]]
 
 
-def translateText(text, target="en"):
+def translateText(text, target="en", source="en"):
     global count
     count += len(text)
-    return text
-    '''translation = translator.translate(text, "en", target) # always translating from english
-    print translation
-    return translation'''
+    return translator.translate(text, target, source)
+
 
 def translateFile(filename, path):
     #print filename, path
     tree = ET.parse(path+filename)
     root = tree.getroot()
 
-    parser = htmlparser.HTMLParser()
+    parser = HTMLParser.HTMLParser()
 
     #root->file->body->trans-unit (source, target, note)
     #print root.tag
@@ -122,7 +120,7 @@ def translateFile(filename, path):
     f.write(newdata.encode('utf-8'))
     f.close()
     print "#"
-path = 'Pigmentum/'
+path = 'ShopEasy/'
 
 for filename in os.listdir(path):
     # do your stuff

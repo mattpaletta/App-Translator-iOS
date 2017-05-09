@@ -161,7 +161,7 @@ class GoogleTranslator(object):
     results4 = translator.detect(["Einen schönen Tag allerseits",
                                      "Ich nehme an"])
     """
-    def __init__(self):
+    def __init__(self, key):
         #NOTE: caching is done on etag not expiry
         self.cache_control = 'max-age='+str(7 * 24 * 60 * 60)
         self.connection = httplib2.Http(ZipCache())
@@ -205,6 +205,7 @@ class GoogleTranslator(object):
         """
         Assumes that response only holds one result
         """
+        print(response)
         json_data = json.loads(response)
         try:
             data = json_data["data"]
