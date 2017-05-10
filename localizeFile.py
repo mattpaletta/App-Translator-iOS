@@ -22,7 +22,7 @@ def translateText(text, target="en", source="en"):
     global count
     global translator
     
-    count += len(text)
+    count += len(text.split(" "))
     
     # if incorrect tree loaded, reload the correct tree
     if translator is None:
@@ -146,4 +146,4 @@ if __name__ == '__main__':
 
         for filename in os.listdir(path):
             translateFile(filename, path)
-            print str(count)+" letters"
+            print str(count)+" words"
