@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xliff xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file datatype="plaintext" original="ShopEasy/Base.lproj/LaunchScreen.storyboard" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="WTS-DA-3mX.text">
+        <source>ShopEasy v1.1</source>
+        <target>ShopEasy v1.1</target>
+        <note>Class = "UILabel"; text = "ShopEasy v1.1"; ObjectID = "WTS-DA-3mX";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasy/Base.lproj/Main.storyboard" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="2N4-sY-fB4.normalTitle">
+        <source>Button</source>
+        <note>Class = "UIButton"; normalTitle = "Button"; ObjectID = "2N4-sY-fB4";</note>
+      </trans-unit>
+      <trans-unit id="3Db-7c-xSZ.text">
+        <source>Return Date</source>
+        <note>Class = "UILabel"; text = "Return Date"; ObjectID = "3Db-7c-xSZ";</note>
+      </trans-unit>
+      <trans-unit id="3uv-TY-8NY.text">
+        <source>Open</source>
+        <note>Class = "UILabel"; text = "Open"; ObjectID = "3uv-TY-8NY";</note>
+      <target>Open</target></trans-unit>
+      <trans-unit id="4iB-fx-oyk.text">
+        <source>Purchase Date</source>
+        <note>Class = "UILabel"; text = "Purchase Date"; ObjectID = "4iB-fx-oyk";</note>
+      </trans-unit>
+      <trans-unit id="5op-uo-Mhd.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "5op-uo-Mhd";</note>
+      </trans-unit>
+      <trans-unit id="7gH-jI-iNm.placeholder">
+        <source>Store Name</source>
+        <note>Class = "UITextField"; placeholder = "Store Name"; ObjectID = "7gH-jI-iNm";</note>
+      </trans-unit>
+      <trans-unit id="8uy-xL-SrC.text">
+        <source>Purchase Date:</source>
+        <note>Class = "UILabel"; text = "Purchase Date:"; ObjectID = "8uy-xL-SrC";</note>
+      </trans-unit>
+      <trans-unit id="9bL-JF-OdO.text">
+        <source>Item Description</source>
+        <note>Class = "UILabel"; text = "Item Description"; ObjectID = "9bL-JF-OdO";</note>
+      </trans-unit>
+      <trans-unit id="97h-Y9-kIl.title">
+        <source>Title</source>
+        <note>Class = "UINavigationItem"; title = "Title"; ObjectID = "97h-Y9-kIl";</note>
+      </trans-unit>
+      <trans-unit id="BRZ-CO-chS.text">
+        <source>Purchase Date:</source>
+        <note>Class = "UILabel"; text = "Purchase Date:"; ObjectID = "BRZ-CO-chS";</note>
+      </trans-unit>
+      <trans-unit id="EK4-ks-PJK.text">
+        <source>#</source>
+        <note>Class = "UILabel"; text = "#"; ObjectID = "EK4-ks-PJK";</note>
+      </trans-unit>
+      <trans-unit id="FoB-Hz-JIe.normalTitle">
+        <source>More Info</source>
+        <note>Class = "UIButton"; normalTitle = "More Info"; ObjectID = "FoB-Hz-JIe";</note>
+      </trans-unit>
+      <trans-unit id="GDK-U9-Sbk.title">
+        <source>Item</source>
+        <note>Class = "UIBarButtonItem"; title = "Item"; ObjectID = "GDK-U9-Sbk";</note>
+      </trans-unit>
+      <trans-unit id="Ij8-4G-mCt.text">
+        <source>Receipt Location</source>
+        <note>Class = "UILabel"; text = "Receipt Location"; ObjectID = "Ij8-4G-mCt";</note>
+      </trans-unit>
+      <trans-unit id="KbV-P0-f4c.text">
+        <source>Remind me on</source>
+        <note>Class = "UILabel"; text = "Remind me on"; ObjectID = "KbV-P0-f4c";</note>
+      </trans-unit>
+      <trans-unit id="M7x-0d-NIn.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "M7x-0d-NIn";</note>
+      </trans-unit>
+      <trans-unit id="MMe-YS-bjv.text">
+        <source>Item Location</source>
+        <note>Class = "UILabel"; text = "Item Location"; ObjectID = "MMe-YS-bjv";</note>
+      </trans-unit>
+      <trans-unit id="Nos-nh-WMn.title">
+        <source>New Return</source>
+        <note>Class = "UINavigationItem"; title = "New Return"; ObjectID = "Nos-nh-WMn";</note>
+      </trans-unit>
+      <trans-unit id="OXw-7j-dg0.text">
+        <source>Remind me on</source>
+        <note>Class = "UILabel"; text = "Remind me on"; ObjectID = "OXw-7j-dg0";</note>
+      </trans-unit>
+      <trans-unit id="Puc-fd-bSR.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "Puc-fd-bSR";</note>
+      </trans-unit>
+      <trans-unit id="R3D-MJ-E4q.text">
+        <source>Item Location</source>
+        <note>Class = "UILabel"; text = "Item Location"; ObjectID = "R3D-MJ-E4q";</note>
+      </trans-unit>
+      <trans-unit id="R5T-FV-JjT.normalTitle">
+        <source>Save</source>
+        <note>Class = "UIButton"; normalTitle = "Save"; ObjectID = "R5T-FV-JjT";</note>
+      </trans-unit>
+      <trans-unit id="R9o-oY-zSW.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "R9o-oY-zSW";</note>
+      </trans-unit>
+      <trans-unit id="TPo-UZ-S5C.text">
+        <source>MMMMM DD, YYYY</source>
+        <note>Class = "UILabel"; text = "MMMMM DD, YYYY"; ObjectID = "TPo-UZ-S5C";</note>
+      </trans-unit>
+      <trans-unit id="VN1-Rm-3Kh.normalTitle">
+        <source>Address</source>
+        <note>Class = "UIButton"; normalTitle = "Address"; ObjectID = "VN1-Rm-3Kh";</note>
+      </trans-unit>
+      <trans-unit id="Wdz-RP-ggZ.title">
+        <source>Settings</source>
+        <note>Class = "UINavigationItem"; title = "Settings"; ObjectID = "Wdz-RP-ggZ";</note>
+      </trans-unit>
+      <trans-unit id="Wq6-FB-kus.normalTitle">
+        <source>Find</source>
+        <note>Class = "UIButton"; normalTitle = "Find"; ObjectID = "Wq6-FB-kus";</note>
+      </trans-unit>
+      <trans-unit id="Wrp-00-a8V.placeholder">
+        <source>Item Description</source>
+        <note>Class = "UITextField"; placeholder = "Item Description"; ObjectID = "Wrp-00-a8V";</note>
+      </trans-unit>
+      <trans-unit id="YKW-6f-YK5.text">
+        <source>Return Date:</source>
+        <note>Class = "UILabel"; text = "Return Date:"; ObjectID = "YKW-6f-YK5";</note>
+      </trans-unit>
+      <trans-unit id="Ydi-u9-c0p.placeholder">
+        <source>Item Description</source>
+        <note>Class = "UITextField"; placeholder = "Item Description"; ObjectID = "Ydi-u9-c0p";</note>
+      </trans-unit>
+      <trans-unit id="Z1f-zw-Abf.text">
+        <source>Receipt Location</source>
+        <note>Class = "UILabel"; text = "Receipt Location"; ObjectID = "Z1f-zw-Abf";</note>
+      </trans-unit>
+      <trans-unit id="cPa-gy-q4n.title">
+        <source>Settings</source>
+        <note>Class = "UITabBarItem"; title = "Settings"; ObjectID = "cPa-gy-q4n";</note>
+      </trans-unit>
+      <trans-unit id="fQP-CP-56O.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "fQP-CP-56O";</note>
+      </trans-unit>
+      <trans-unit id="hBQ-f8-P08.normalTitle">
+        <source>Button</source>
+        <note>Class = "UIButton"; normalTitle = "Button"; ObjectID = "hBQ-f8-P08";</note>
+      </trans-unit>
+      <trans-unit id="ibx-jM-z9u.title">
+        <source>More Info</source>
+        <note>Class = "UINavigationItem"; title = "More Info"; ObjectID = "ibx-jM-z9u";</note>
+      </trans-unit>
+      <trans-unit id="igD-ag-IHt.text">
+        <source>Return Date:</source>
+        <note>Class = "UILabel"; text = "Return Date:"; ObjectID = "igD-ag-IHt";</note>
+      </trans-unit>
+      <trans-unit id="jOx-ZL-uYR.title">
+        <source>Returns</source>
+        <note>Class = "UITabBarItem"; title = "Returns"; ObjectID = "jOx-ZL-uYR";</note>
+      </trans-unit>
+      <trans-unit id="jtj-9O-tNi.normalTitle">
+        <source>Call Store</source>
+        <note>Class = "UIButton"; normalTitle = "Call Store"; ObjectID = "jtj-9O-tNi";</note>
+      </trans-unit>
+      <trans-unit id="lDR-fV-yrT.normalTitle">
+        <source>View Website</source>
+        <note>Class = "UIButton"; normalTitle = "View Website"; ObjectID = "lDR-fV-yrT";</note>
+      </trans-unit>
+      <trans-unit id="o64-2N-DmA.text">
+        <source>Item Description</source>
+        <note>Class = "UILabel"; text = "Item Description"; ObjectID = "o64-2N-DmA";</note>
+      </trans-unit>
+      <trans-unit id="q8H-yP-pcU.title">
+        <source>Returns</source>
+        <note>Class = "UINavigationItem"; title = "Returns"; ObjectID = "q8H-yP-pcU";</note>
+      </trans-unit>
+      <trans-unit id="rGI-I0-hE5.text">
+        <source>Return Date:</source>
+        <note>Class = "UILabel"; text = "Return Date:"; ObjectID = "rGI-I0-hE5";</note>
+      </trans-unit>
+      <trans-unit id="s2n-ck-oTV.text">
+        <source>*You will be able to change all of this later</source>
+        <note>Class = "UILabel"; text = "*You will be able to change all of this later"; ObjectID = "s2n-ck-oTV";</note>
+      </trans-unit>
+      <trans-unit id="u8K-6x-sT0.text">
+        <source>Store Name</source>
+        <note>Class = "UILabel"; text = "Store Name"; ObjectID = "u8K-6x-sT0";</note>
+      </trans-unit>
+      <trans-unit id="wVY-UP-8p5.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "wVY-UP-8p5";</note>
+      </trans-unit>
+      <trans-unit id="wVj-V4-LaZ.normalTitle">
+        <source>Save</source>
+        <note>Class = "UIButton"; normalTitle = "Save"; ObjectID = "wVj-V4-LaZ";</note>
+      </trans-unit>
+      <trans-unit id="xMW-QV-KSI.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "xMW-QV-KSI";</note>
+      </trans-unit>
+      <trans-unit id="yfg-c1-Ai0.text">
+        <source>Label</source>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "yfg-c1-Ai0";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasy/Info.plist" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <target>$(PRODUCT_NAME)</target>
+      <target>$(PRODUCT_NAME)</target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target /></trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.1</source>
+        <target>1.1</target>
+      <target>1.1</target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target><ns1:target>1.1</ns1:target></trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasy/Localizable.strings" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="%d days before.">
+        <source>%d days before.</source>
+        <note>No value set for item location</note>
+      </trans-unit>
+      <trans-unit id="About Me">
+        <source>About Me</source>
+        <note>Links to about the developer</note>
+      </trans-unit>
+      <trans-unit id="About The Developer">
+        <source>About The Developer</source>
+        <note>Link to developer website</note>
+      </trans-unit>
+      <trans-unit id="Bedroom">
+        <source>Bedroom</source>
+        <note>Item In Bedroom
+   Receipt In Bedroom</note>
+      </trans-unit>
+      <trans-unit id="Bulletin Board">
+        <source>Bulletin Board</source>
+        <note>Item on Bulletin Board
+   Receipt on Bulletin Board</note>
+      </trans-unit>
+      <trans-unit id="Closed">
+        <source>Closed</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Days">
+        <source>Days</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Days Before">
+        <source>Days Before</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Garage">
+        <source>Garage</source>
+        <note>Item In Garage
+   Receipt In Garage</note>
+      </trans-unit>
+      <trans-unit id="In-App Purchases">
+        <source>In-App Purchases</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Item Location">
+        <source>Item Location</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Kitchen">
+        <source>Kitchen</source>
+        <note>Item In Kitchen
+   Receipt In Kitchen</note>
+      </trans-unit>
+      <trans-unit id="Living/Family Room">
+        <source>Living/Family Room</source>
+        <note>Item In Living/Family Room
+   Receipt In Living/Family Room</note>
+      </trans-unit>
+      <trans-unit id="Months">
+        <source>Months</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Not Set">
+        <source>Not Set</source>
+        <note>Item location not set
+   No value set for item location
+   No value set for receipt location
+   Receipt location not set</note>
+      </trans-unit>
+      <trans-unit id="Notifications">
+        <source>Notifications</source>
+        <note>Toggle Notifications</note>
+      </trans-unit>
+      <trans-unit id="OK">
+        <source>OK</source>
+        <note>Accept</note>
+      <target>OK</target></trans-unit>
+      <trans-unit id="Office">
+        <source>Office</source>
+        <note>Item In Office
+   Receipt In Office</note>
+      </trans-unit>
+      <trans-unit id="Oops!">
+        <source>Oops!</source>
+        <note>An Error Occured</note>
+      <target>Oops!</target></trans-unit>
+      <trans-unit id="Open">
+        <source>Open</source>
+        <note>No comment provided by engineer.</note>
+      <target>Open</target></trans-unit>
+      <trans-unit id="Please choose a store.">
+        <source>Please choose a store.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Please enable In-App Purchases on your device to continue.">
+        <source>Please enable In-App Purchases on your device to continue.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Purchases">
+        <source>Purchases</source>
+        <note>IAP available for purchase</note>
+      </trans-unit>
+      <trans-unit id="Rate This App">
+        <source>Rate This App</source>
+        <note>Link to rate this app on the app store</note>
+      </trans-unit>
+      <trans-unit id="Receipt Location">
+        <source>Receipt Location</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Restore Purchases">
+        <source>Restore Purchases</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Return at %@ in %d.">
+        <source>Return at %1$@ in %2$d.</source>
+        <note>Notification on how long to return item.</note>
+      </trans-unit>
+      <trans-unit id="ShopEasy">
+        <source>ShopEasy</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Shopeasy">
+        <source>Shopeasy</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Unknown">
+        <source>Unknown</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="View Other Products">
+        <source>View Other Products</source>
+        <note>Link to view other products on app store</note>
+      </trans-unit>
+      <trans-unit id="Wallet">
+        <source>Wallet</source>
+        <note>Item In Wallet
+   Receipt In Wallet</note>
+      </trans-unit>
+      <trans-unit id="Weeks">
+        <source>Weeks</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="With the Item">
+        <source>With the Item</source>
+        <note>Receipt with the item</note>
+      </trans-unit>
+      <trans-unit id="Years">
+        <source>Years</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You have exceeded the 10 free returns. To add a new return, please purchase unlimited returns from the settings screen.">
+        <source>You have exceeded the 10 free returns. To add a new return, please purchase unlimited returns from the settings screen.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="You must be connected to the internet and enable location services.">
+        <source>You must be connected to the internet and enable location services.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="n.friends">
+        <source>n.friends</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasy/Localization.strings" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="n.friends">
+        <source>n.friends</source>
+        <target>n.friends</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasyTests/Info.plist" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <target>$(PRODUCT_NAME)</target>
+      <target>$(PRODUCT_NAME)</target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target /></trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+        <target>1.0</target>
+      <target>1.0</target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target></trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasyTests/Localizable.strings" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="Bedroom">
+        <source>Bedroom</source>
+        <target>Bedroom</target>
+        <note>Item In Bedroom
+   Receipt In Bedroom</note>
+      </trans-unit>
+      <trans-unit id="Bulletin Board">
+        <source>Bulletin Board</source>
+        <target>Bulletin Board</target>
+        <note>Item on Bulletin Board
+   Receipt on Bulletin Board</note>
+      </trans-unit>
+      <trans-unit id="Garage">
+        <source>Garage</source>
+        <target>Garage</target>
+        <note>Item In Garage
+   Receipt In Garage</note>
+      </trans-unit>
+      <trans-unit id="Kitchen">
+        <source>Kitchen</source>
+        <target>Kitchen</target>
+        <note>Item In Kitchen
+   Receipt In Kitchen</note>
+      </trans-unit>
+      <trans-unit id="Living/Family Room">
+        <source>Living/Family Room</source>
+        <target>Living/Family Room</target>
+        <note>Item In Living/Family Room
+   Receipt In Living/Family Room</note>
+      </trans-unit>
+      <trans-unit id="Not Set">
+        <source>Not Set</source>
+        <target>Not Set</target>
+        <note>Item location not set
+   Receipt location not set</note>
+      </trans-unit>
+      <trans-unit id="Office">
+        <source>Office</source>
+        <target>Office</target>
+        <note>Item In Office
+   Receipt In Office</note>
+      </trans-unit>
+      <trans-unit id="Wallet">
+        <source>Wallet</source>
+        <target>Wallet</target>
+        <note>Item In Wallet
+   Receipt In Wallet</note>
+      </trans-unit>
+      <trans-unit id="With the Item">
+        <source>With the Item</source>
+        <target>With the Item</target>
+        <note>Receipt with the item</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="ShopEasyUITests/Info.plist" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="8E2002" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3.2" />
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <target>$(PRODUCT_NAME)</target>
+      <target>$(PRODUCT_NAME)</target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target>$(PRODUCT_NAME)</ns1:target><ns1:target /></trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+        <target>1.0</target>
+      <target>1.0</target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target><ns1:target>1.0</ns1:target></trans-unit>
+    </body>
+  </file>
+</xliff>
