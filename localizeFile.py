@@ -30,8 +30,11 @@ def translateText(text, target="en", source="en"):
     elif translator.source != source or translator.target != target:
         translator = langDatabase(source, target)
     
-    
-    return translator.translate(text, target, source)
+    paragraph = text.split(".")
+    output = []
+    for txt in paragraph:
+        output.append(translator.translate(txt, target, source))
+    return '.'.join(output)
 
 
 def translateFile(filename, path):
@@ -146,4 +149,5 @@ if __name__ == '__main__':
 
         for filename in os.listdir(path):
             translateFile(filename, path)
+            
             print str(count)+" words"

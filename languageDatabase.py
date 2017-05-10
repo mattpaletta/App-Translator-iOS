@@ -2,7 +2,6 @@ import json
 import os
 from translate import GoogleTranslator
 
-
 # store past translations in an XML file, and a separate lookup for human entries
 
 '''
