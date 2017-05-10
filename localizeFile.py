@@ -149,7 +149,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Correct Usage: 'python localizeFile.py {FOLDER_TO_TRANSLATE}'")
         exit()
-    elif sys.argv[1] == "--rm-cache":
+    if len(sys.argv) > 1 and sys.argv[1] == "--rm-cache":
         if os.path.exists("cache/"): #file exist
             os.system("rm -r cache")
 
@@ -157,6 +157,32 @@ if __name__ == '__main__':
         path = '.'
     else:
         path = sys.argv[1]
+
+    auto = False
+    if len(sys.argv) > 2 and sys.argv[2] == "--auto":
+        print("auto")
+        auto = True
+        projectBase = None
+        for root, subFolders, files in os.walk(path):
+            if root.endswith('.xcodeproj') and os.path.islink(root) == False and "project.xcworkspace" in subFolders:
+                # remember location of base
+                projectBase = root
+                print(root, subFolders)
+
+
+
+
+
+        langs = ["ar", "ca", "cs", "da", "de", "el", "es-419", "es-MX", "es", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "ms", "nb", "nl", "pl", "pt-BR", "pt-PT", "ro", "ru", "sk", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"]
+
+        exports = " -exportLanguage ".join(langs)
+        projectName = projectBase.split("/")[1]
+        print(projectName)
+
+        print("xcodebuild -exportLocalizations -localizationPath ./"+projectName+" -project "+str(projectBase) + " -exportLanguage " + str(exports))
+        os.system("xcodebuild -exportLocalizations -localizationPath ./"+projectName+" -project "+str(projectBase) + " -exportLanguage " + str(exports))
+
+        path = projectName+"/"
 
     for root, subFolders, files in os.walk(path):
         for file in files:
