@@ -10,6 +10,9 @@ from translate import GoogleTranslator
     <translation lang=""> text
 '''
 
+source = None
+target = None
+
 def writeJSON(fileName, data):
     with open(fileName, 'w') as outfile:
         json.dump(data, outfile)
@@ -23,10 +26,14 @@ class langDatabase():
     preferredTree = {}
     lookupTree = {}
     
-    def __init__(self):
+    def __init__(self, source, target):
         #Load the files
-        lookup_path = "cache.json"
-        preferred_path = "preferred.json"
+        
+        self.source = source
+        self.target = target
+        
+        lookup_path = "cache_"+source+"_"+target+".json"
+        preferred_path = "preferred_"+source+"_"+target+".json"
         if os.path.exists(lookup_path): #file exist
             self.lookupTree = readJSON(lookup_path)
         
@@ -55,7 +62,7 @@ class langDatabase():
             self.lookupTree[source][target][original] = translated
     
     def translate(self, original, target, source="en"):
-        #check if source is already in the preferred tree
+        #check if source is already in the preferred tree, then check lookup tree
         trees = [self.preferredTree, self.lookupTree]
         
         for tree in trees:
@@ -73,7 +80,7 @@ class langDatabase():
 
     def __del__(self):
         # save the tree, if it changed
-        lookup_path = "cache.json"
-        preferred_path = "preferred.json"
+        lookup_path = "cache_"+self.source+"_"+self.target+".json"
+        preferred_path = "preferred_"+self.source+"_"+self.target+".json"
         writeJSON(lookup_path, self.lookupTree)
         writeJSON(preferred_path, self.preferredTree)

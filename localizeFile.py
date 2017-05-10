@@ -9,7 +9,7 @@ stdin, stdout = sys.stdin, sys.stdout
 reload(sys)
 sys.stdin, sys.stdout = stdin, stdout
 sys.setdefaultencoding('utf-8')
-translator = langDatabase()
+translator = None
 count = 0
 
 
@@ -20,7 +20,17 @@ count = 0
 
 def translateText(text, target="en", source="en"):
     global count
+    global translator
+    
     count += len(text)
+    
+    # if incorrect tree loaded, reload the correct tree
+    if translator is None:
+        translator = langDatabase(source, target)
+    elif translator.source != source or translator.target != target:
+        translator = langDatabase(source, target)
+    
+    
     return translator.translate(text, target, source)
 
 
