@@ -13,11 +13,19 @@ from translate import GoogleTranslator
 source = None
 target = None
 
-def writeJSON(fileName, data):
+def createCacheFolder(folder):
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+def writeJSON(fileName, data, folder):
+    createCacheFolder(folder)
+    
     with open(fileName, 'w') as outfile:
         json.dump(data, outfile)
 
-def readJSON(fileName):
+def readJSON(fileName, folder):
+    createCacheFolder(folder)
+    
     with open(fileName) as data_file:
         return json.load(data_file)
 
@@ -32,18 +40,18 @@ class langDatabase():
         self.source = source
         self.target = target
         
-        lookup_path = "cache_"+source+"_"+target+".json"
-        preferred_path = "preferred_"+source+"_"+target+".json"
+        lookup_path = "cache/cache_"+source+"_"+target+".json"
+        preferred_path = "preferred/preferred_"+source+"_"+target+".json"
         if os.path.exists(lookup_path): #file exist
-            self.lookupTree = readJSON(lookup_path)
+            self.lookupTree = readJSON(lookup_path, "cache")
         
         if os.path.exists(preferred_path):
-            self.preferred_path = readJSON(preferred_path)
+            self.preferred_path = readJSON(preferred_path, "preferred")
 
         # File will be automatically created otherwise
         
         assert(os.path.exists("config.json"))
-        json = readJSON("config.json")
+        json = readJSON("config.json", "/")
         assert("api" in json)
         assert("google_translate" in json["api"])
         api = json["api"]["google_translate"]
@@ -80,7 +88,7 @@ class langDatabase():
 
     def __del__(self):
         # save the tree, if it changed
-        lookup_path = "cache_"+self.source+"_"+self.target+".json"
-        preferred_path = "preferred_"+self.source+"_"+self.target+".json"
-        writeJSON(lookup_path, self.lookupTree)
-        writeJSON(preferred_path, self.preferredTree)
+        lookup_path = "cache/cache_"+self.source+"_"+self.target+".json"
+        preferred_path = "preferred/preferred_"+self.source+"_"+self.target+".json"
+        writeJSON(lookup_path, self.lookupTree, "cache")
+        writeJSON(preferred_path, self.preferredTree, "preferred")
