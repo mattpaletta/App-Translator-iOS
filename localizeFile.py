@@ -2,6 +2,7 @@
 import xml.etree.ElementTree as ET
 import json
 import sys
+import re
 import os
 import HTMLParser
 from languageDatabase import langDatabase
@@ -38,8 +39,12 @@ def translateText(text, target="en", source="en"):
 
 
 def translateFile(filename, path):
+    
+    inputFile = os.path.join(path, filename)
+    
     #print filename, path
-    tree = ET.parse(path+filename)
+    print(inputFile)
+    tree = ET.parse(inputFile)
     root = tree.getroot()
 
     parser = HTMLParser.HTMLParser()
@@ -67,6 +72,8 @@ def translateFile(filename, path):
 
 
     print "Translating "+targetLang
+    p = re.compile("[0-9]+.*[0.9]* | \$\w*")
+
     for xliff in root:
         for file in xliff:
             if file.tag == "{urn:oasis:names:tc:xliff:document:1.2}body" or file.tag == "body":
@@ -94,7 +101,7 @@ def translateFile(filename, path):
                                 translatedEncoded = raw.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                if source.text != new.text:
+                                if source.text != new.text and p.search(source.text) is None:
                                     body.append(new)
                             else:
                                 # Never found it Add it in
@@ -103,7 +110,7 @@ def translateFile(filename, path):
                                 translatedEncoded = translated.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                if source.text != new.text:
+                                if source.text != new.text and p.search(source.text) is None:
                                     body.append(new)
                         # Update it from Google or from Human Dictionary
                         else:
@@ -114,7 +121,7 @@ def translateFile(filename, path):
                                 translatedEncoded = raw.encode('UTF-8')
                                 target.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                if source.text != new.text:
+                                if source.text != new.text and p.search(source.text) is None:
                                     body.append(new)
                             else:
                                 translated = translateText(source.text, targetLang)
@@ -123,16 +130,16 @@ def translateFile(filename, path):
                                 #print target.text
 
     print "#",
-    tree.write(path+filename,encoding="UTF-8",xml_declaration=True)
+    tree.write(str(inputFile).replace("./", ""), encoding="UTF-8",xml_declaration=True)
     print "#",
 
-    f = open(path+filename,'r')
+    f = open(str(inputFile).replace("./", ""),'r')
     filedata = f.read().encode('utf-8')
     f.close()
     print "#",
     newdata = filedata.replace("ns0:","") # delete ns0: character in file
     print "#",
-    f = open(path+filename,'w')
+    f = open(str(inputFile).replace("./", ""),'w')
     f.write(newdata.encode('utf-8'))
     f.close()
     print "#"
@@ -141,13 +148,23 @@ def translateFile(filename, path):
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Correct Usage: 'python localizeFile.py {FOLDER_TO_TRANSLATE}'")
+        exit()
     elif sys.argv[1] == "--rm-cache":
-        if os.path.exists("cache.json"): #file exist
-            os.remove("cache.json")
-    else:
-        path = sys.argv[1]+'/'
+        if os.path.exists("cache/"): #file exist
+            os.system("rm -r cache")
 
-        for filename in os.listdir(path):
-            translateFile(filename, path)
-            
-            print str(count)+" words"
+    if sys.argv[1] == "/":
+        path = '.'
+    else:
+        path = sys.argv[1]
+
+    for root, subFolders, files in os.walk(path):
+        for file in files:
+            if file.endswith('.xliff') and os.path.islink(os.path.join(root, file)) == False:
+                print(os.path.join(root, file))
+                translateFile(file, root)
+            elif (file.endswith('.ai') or file.endswith('.psd')) and os.path.islink(os.path.join(root, file)) == False:
+                print(file)
+                print("Found Image! Translating...")
+
+    print str(count)+" words"

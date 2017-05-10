@@ -33,7 +33,7 @@ class langDatabase():
     preferredTree = {}
     lookupTree = {}
     
-    def __init__(self, source, target):
+    def __init__(self, source="en", target="en"):
         #Load the files
         
         self.source = source
