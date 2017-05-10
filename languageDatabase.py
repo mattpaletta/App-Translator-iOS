@@ -45,19 +45,20 @@ class langDatabase():
         self.translator = GoogleTranslator(api)
 
     def add(self, original, translated, target, source):
-        if source not in tree:
-            tree[source] = {}
+        if source not in self.lookupTree:
+            self.lookupTree[source] = {}
         
-        if target not in tree[source]:
-            tree[source][target] = {}
+        if target not in self.lookupTree[source]:
+            self.lookupTree[source][target] = {}
         
-        if original not in tree[source][target]:
-            tree[source][target][original] = translated
+        if original not in self.lookupTree[source][target]:
+            self.lookupTree[source][target][original] = translated
     
     def translate(self, original, target, source="en"):
         #check if source is already in the preferred tree
+        trees = [self.preferredTree, self.lookupTree]
         
-        for tree in [self.preferredTree, self.lookupTree]:
+        for tree in trees:
             if source in tree:
                 if target in tree[source]:
                     if original in tree[source][target]:
