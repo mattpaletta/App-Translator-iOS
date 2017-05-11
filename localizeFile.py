@@ -184,6 +184,14 @@ if __name__ == '__main__':
                 projectBase = root
                 print(root, subFolders)
 
+        # Get current project langs
+        projLangs = []
+        for lang in langs:
+            print("/".join(projectBase.split("/")[:-1])+"/"+projectBase.split("/")[:-1][-1]+"/"+lang+".lproj")
+            if os.path.exists("/".join(projectBase.split("/")[:-1])+"/"+projectBase.split("/")[:-1][-1]+"/"+lang+".lproj"):
+                projLangs.append(lang)
+        langs = projLangs
+
         exports = " -exportLanguage ".join(langs)
         projectName = projectBase.split("/")[1]
         print(projectName)
