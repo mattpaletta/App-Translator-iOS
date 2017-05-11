@@ -109,7 +109,7 @@ def translateFile(filename, path):
                                 translatedEncoded = raw.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                if source.text != new.text and p.search(source.text) is None:
+                                if source.text != new.text or p.search(source.text) is None:
                                     #print(new.text)
                                     body.append(new)
                             else:
@@ -119,7 +119,7 @@ def translateFile(filename, path):
                                 translatedEncoded = translated.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
                                 #print(new.text)
-                                if source.text != new.text and p.search(source.text) is None:
+                                if source.text != new.text or p.search(source.text) is None:
                                     #print(new.text)
                                     body.append(new)
                         # Update it from Google or from Human Dictionary
@@ -131,7 +131,7 @@ def translateFile(filename, path):
                                 translatedEncoded = raw.encode('UTF-8')
                                 target.text = parser.unescape(translatedEncoded)
                                 #print new.text
-                                if source.text != new.text and p.search(source.text) is None:
+                                if source.text != new.text or p.search(source.text) is None:
                                     #print(new.text)
                                     body.append(new)
                             else:
@@ -170,6 +170,10 @@ if __name__ == '__main__':
         path = sys.argv[1]
 
     auto = False
+
+    # Set default langs in case not specified in JSON Config
+    langs = ["ar", "ca", "cs", "da", "de", "el", "es-419", "es-MX", "es", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "ms", "nb", "nl", "pl", "pt-BR", "pt-PT", "ro", "ru", "sk", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"]
+
     if len(sys.argv) > 2 and sys.argv[2] == "--auto":
         print("auto")
         auto = True
@@ -179,8 +183,6 @@ if __name__ == '__main__':
                 # remember location of base
                 projectBase = root
                 print(root, subFolders)
-
-        langs = ["ar", "ca", "cs", "da", "de", "el", "es-419", "es-MX", "es", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "ms", "nb", "nl", "pl", "pt-BR", "pt-PT", "ro", "ru", "sk", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"]
 
         exports = " -exportLanguage ".join(langs)
         projectName = projectBase.split("/")[1]
@@ -199,5 +201,20 @@ if __name__ == '__main__':
             elif (file.endswith('.ai') or file.endswith('.psd')) and os.path.islink(os.path.join(root, file)) == False:
                 print(file)
                 print("Found Image! Translating...")
+
+    if auto:
+        print("auto")
+        
+        exports = " -exportLanguage ".join(langs)
+        projectName = projectBase.split("/")[1]
+        print(projectName)
+        
+        for lang in langs:
+            # import one at a time
+            print("xcodebuild -importLocalizations -localizationPath ShopEasy/"+lang+".xliff -project "+projectBase)
+            os.system("xcodebuild -importLocalizations -localizationPath ShopEasy/"+lang+".xliff -project "+projectBase)
+        
+        path = projectName+"/"
+
 
     print str(count)+" words"
