@@ -44,6 +44,11 @@ def translateFile(filename, path):
     
     #print filename, path
     print(inputFile)
+    #ET.register_namespace('', "urn:oasis:names:tc:xliff:document:1.2")
+    #ET.register_namespace('xsi', "http://www.w3.org/2001/XMLSchema-instance")
+    #ET.register_namespace('xsi', "http://www.w3.org/2001/XMLSchema-instance")
+    #ET.register_namespace('schemaLocation', "urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd")
+    
     tree = ET.parse(inputFile)
     root = tree.getroot()
 
@@ -75,10 +80,13 @@ def translateFile(filename, path):
     p = re.compile("[0-9]+.*[0.9]* | \$\w*")
 
     for xliff in root:
+        #print(xliff)
         for file in xliff:
+            #print(file)
             if file.tag == "{urn:oasis:names:tc:xliff:document:1.2}body" or file.tag == "body":
-                print "+",
+                #print "+",
                 for body in file:
+                    #print(body)
                     if body.tag == "{urn:oasis:names:tc:xliff:document:1.2}trans-unit" or body.tag == "trans-unit":
                         attrib = body.attrib
                         foundTarget = False
@@ -87,7 +95,7 @@ def translateFile(filename, path):
                         for item in body:
                             if item.tag == "{urn:oasis:names:tc:xliff:document:1.2}source" or item.tag == "source":
                                 source = item #found the item, store it
-                                print ".",
+                                print "*",
                             if item.tag == "{urn:oasis:names:tc:xliff:document:1.2}target" or item.tag == "target":
                                 target = item #found the item, store it
                                 foundTarget = True
@@ -102,6 +110,7 @@ def translateFile(filename, path):
                                 new.text = parser.unescape(translatedEncoded)
                                 #print new.text
                                 if source.text != new.text and p.search(source.text) is None:
+                                    #print(new.text)
                                     body.append(new)
                             else:
                                 # Never found it Add it in
@@ -109,8 +118,9 @@ def translateFile(filename, path):
                                 translated = translateText(source.text, targetLang)
                                 translatedEncoded = translated.encode('UTF-8')
                                 new.text = parser.unescape(translatedEncoded)
-                                #print new.text
+                                #print(new.text)
                                 if source.text != new.text and p.search(source.text) is None:
+                                    #print(new.text)
                                     body.append(new)
                         # Update it from Google or from Human Dictionary
                         else:
@@ -122,24 +132,25 @@ def translateFile(filename, path):
                                 target.text = parser.unescape(translatedEncoded)
                                 #print new.text
                                 if source.text != new.text and p.search(source.text) is None:
+                                    #print(new.text)
                                     body.append(new)
                             else:
                                 translated = translateText(source.text, targetLang)
                                 translatedEncoded = translated.encode('UTF-8')
                                 target.text = parser.unescape(translatedEncoded)
                                 #print target.text
-
+                                        
     print "#",
-    tree.write(str(inputFile).replace("./", ""), encoding="UTF-8",xml_declaration=True)
+    tree.write(str(inputFile), encoding="UTF-8",xml_declaration=True)
     print "#",
-
-    f = open(str(inputFile).replace("./", ""),'r')
+    f = open(str(inputFile),'r')
     filedata = f.read().encode('utf-8')
     f.close()
     print "#",
     newdata = filedata.replace("ns0:","") # delete ns0: character in file
+    newdata = newdata.replace("ns1:","") # delete ns0: character in file
     print "#",
-    f = open(str(inputFile).replace("./", ""),'w')
+    f = open(str(inputFile),'w')
     f.write(newdata.encode('utf-8'))
     f.close()
     print "#"
@@ -168,10 +179,6 @@ if __name__ == '__main__':
                 # remember location of base
                 projectBase = root
                 print(root, subFolders)
-
-
-
-
 
         langs = ["ar", "ca", "cs", "da", "de", "el", "es-419", "es-MX", "es", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "ms", "nb", "nl", "pl", "pt-BR", "pt-PT", "ro", "ru", "sk", "sv", "th", "tr", "uk", "vi", "zh-Hans", "zh-Hant"]
 

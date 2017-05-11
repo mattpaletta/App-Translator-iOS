@@ -76,6 +76,7 @@ class langDatabase():
             if source in tree:
                 if target in tree[source]:
                     if original in tree[source][target]:
+                        print "^",
                         return tree[source][target][original]
 
         # Must not be cached
