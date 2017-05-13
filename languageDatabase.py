@@ -67,7 +67,26 @@ class langDatabase():
         
         if original not in self.lookupTree[source][target]:
             self.lookupTree[source][target][original] = translated
-    
+
+    def inTree(self, original, target, source):
+        if source not in self.lookupTree:
+            return False
+            
+        if target not in self.lookupTree[source]:
+            return False
+        
+        if original not in self.lookupTree[source][target]:
+            return False
+
+        return True
+
+    def estimate(self, original, target, source="en"):
+        # If it's already cached, won't cost anything
+        if self.inTree(original, target, source):
+            return 0
+        else:
+            return 20.0 * len(original) / 1000000
+
     def translate(self, original, target, source="en"):
         #check if source is already in the preferred tree, then check lookup tree
         trees = [self.preferredTree, self.lookupTree]
